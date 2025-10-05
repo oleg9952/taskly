@@ -1,0 +1,1 @@
+enum CategoryTabViewVariant { inProgress, completed }

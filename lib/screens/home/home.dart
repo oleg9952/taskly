@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './widgets/category_card.dart';
-import 'constants.dart';
+import '../../shared/constants.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -47,7 +47,10 @@ class HomeScreen extends StatelessWidget {
               mainAxisExtent: 140,
             ),
             itemCount: 40,
-            itemBuilder: (_, __) => const CategoryCard(),
+            itemBuilder: (_, __) => const CategoryCard(
+              title: 'Home',
+              description: 'Some long description...',
+            ),
           );
         },
       ),

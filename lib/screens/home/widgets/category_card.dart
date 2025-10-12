@@ -107,6 +107,7 @@ class CategoryCard extends StatelessWidget {
   }
 
   void goToCategory(BuildContext context) {
-    context.pushNamed(Paths.category.name, pathParameters: {'id': title});
+    context.pushNamed(Paths.category.name,
+        pathParameters: {'id': title.toLowerCase()});
   }
 }

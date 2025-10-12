@@ -15,61 +15,51 @@ class TaskCard extends StatelessWidget {
     final textDecoration =
         isCompleted ? TextDecoration.lineThrough : TextDecoration.none;
 
-    return GestureDetector(
-      onTap: () {
-        // TODO: move task to completed
-        print('mark as completed');
-      },
-      onLongPress: () {
-        // TODO: show fullscreen preview with ability to edit
-        print('show preview');
-      },
-      child: Card(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(CARD_BORDER_RADIUS)),
-        child: Padding(
-          padding: const EdgeInsets.all(CARD_PADDING),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // -----------------------
-                    // Title
-                    // -----------------------
-                    Text(
-                      'Some task...',
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          decoration: textDecoration),
-                    ),
-
-                    // -----------------------
-                    // Description
-                    // -----------------------
-                    Text(
-                      'Some description',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: Colors.grey[800], decoration: textDecoration),
-                    )
-                  ],
-                ),
-              ),
-              Column(
+    return Card(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(CARD_BORDER_RADIUS)),
+      child: Padding(
+        padding: const EdgeInsets.all(CARD_PADDING),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // -----------------------
-                  // Circular checkbox
+                  // Title
                   // -----------------------
-                  iconByVariant()
+                  Text(
+                    'Some task...',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        decoration: textDecoration),
+                  ),
+
+                  // -----------------------
+                  // Description
+                  // -----------------------
+                  Text(
+                    'Some description',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                        color: Colors.grey[800], decoration: textDecoration),
+                  )
                 ],
-              )
-            ],
-          ),
+              ),
+            ),
+            Column(
+              children: [
+                // -----------------------
+                // Circular checkbox
+                // -----------------------
+                iconByVariant()
+              ],
+            )
+          ],
         ),
       ),
     );

@@ -31,7 +31,7 @@ class CategoryScreen extends StatelessWidget {
               ),
             ),
           ],
-          body: const TabBarView(
+          body: TabBarView(
             children: [
               CategoryTabView(variant: CategoryTabViewVariant.inProgress),
               CategoryTabView(variant: CategoryTabViewVariant.completed),

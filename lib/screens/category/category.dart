@@ -44,8 +44,8 @@ class _CategoryScreenState extends State<CategoryScreen>
               actions: [
                 HeaderPopup(
                   categoryName: widget.categoryId,
-                  isCompletedView: _tabController.index ==
-                      CategoryTabViewVariant.completed.index,
+                  viewVariant:
+                      CategoryTabViewVariant.values[_tabController.index],
                 )
               ],
               centerTitle: true,

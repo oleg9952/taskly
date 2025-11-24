@@ -25,6 +25,16 @@ class _HeaderPopupState extends State<HeaderPopup> {
     );
   }
 
+  void _handleAction(ActionVariants variant) {
+    if (variant.name == ActionVariants.createTask.name) {
+    } else if (variant.name == ActionVariants.deleteTask.name) {
+    } else if (variant.name == ActionVariants.completeAll.name) {
+    } else if (variant.name == ActionVariants.incompleteAll.name) {
+    } else if (variant.name == ActionVariants.clearAllInProgress.name) {
+    } else if (variant.name == ActionVariants.clearAllCompleted.name) {
+    } else if (variant.name == ActionVariants.clearCategory.name) {}
+  }
+
   List<PopupMenuEntry> _renderItems() {
     final isInProgressView =
         widget.viewVariant.name == CategoryTabViewVariant.inProgress.name;
@@ -38,6 +48,7 @@ class _HeaderPopupState extends State<HeaderPopup> {
         );
 
         return PopupMenuItem(
+          onTap: () => _handleAction(variant),
           child: Row(
             children: [
               Icon(

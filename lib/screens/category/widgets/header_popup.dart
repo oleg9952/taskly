@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:taskly/screens/category/widgets/drag_handler.dart';
 import 'package:taskly/shared/types.dart';
+import 'package:taskly/widgets/forms/task_form.dart';
 
 import 'deps.dart';
 
@@ -27,6 +29,21 @@ class _HeaderPopupState extends State<HeaderPopup> {
 
   void _handleAction(ActionVariants variant) {
     if (variant.name == ActionVariants.createTask.name) {
+      showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        showDragHandle: true,
+        builder: (context) {
+          return Padding(
+              padding: EdgeInsets.only(
+                  bottom: MediaQuery.of(context).viewInsets.bottom + 20,
+                  left: 10,
+                  right: 10),
+              child: SingleChildScrollView(
+                child: TaskForm(),
+              ));
+        },
+      );
     } else if (variant.name == ActionVariants.deleteTask.name) {
     } else if (variant.name == ActionVariants.completeAll.name) {
     } else if (variant.name == ActionVariants.incompleteAll.name) {
